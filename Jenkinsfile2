@@ -11,7 +11,7 @@ pipeline{
          git 'https://github.com/prafullashilimkar/star-agile-insurance-project.git'
                     }
             }
-        }
+   
 
      stage('Build the  Application'){
                steps {
@@ -31,7 +31,8 @@ pipeline{
                       sh 'docker build -t prafullla/insuranceproj:latest  .'
                       }
                    }
-	    }               
+	    } 
+}	    
 
 
 
