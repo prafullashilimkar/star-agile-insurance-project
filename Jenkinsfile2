@@ -11,4 +11,5 @@ pipeline{
          git 'https://github.com/prafullashilimkar/star-agile-insurance-project.git'
                     }
                  }
-
+}
+}
