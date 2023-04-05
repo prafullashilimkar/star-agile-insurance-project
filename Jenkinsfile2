@@ -10,11 +10,9 @@ pipeline{
          echo 'checkout the code from GitRepo'
          git 'https://github.com/prafullashilimkar/star-agile-insurance-project.git'
                     }
-                 }
-<<<<<<< HEAD
-}
-}
-=======
+            }
+        }
+
      stage('Build the  Application'){
                steps {
                    echo "Cleaning.... Compiling......Testing.........Packaging"
@@ -27,8 +25,15 @@ pipeline{
                  publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Insuranceproject/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])  
                     }
             }
+
+    stage('Docker Image Creation'){
+               steps {
+                      sh 'docker build -t prafullla/insuranceproj:latest  .'
+                      }
+                   }
+	    
              
 }               
 }
 
->>>>>>> 8a16d6b6f1bd70ab6a59dd721c08f441a7c2293f
+
