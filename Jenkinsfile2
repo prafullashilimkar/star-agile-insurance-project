@@ -31,9 +31,7 @@ pipeline{
                       sh 'docker build -t prafullla/insuranceproj:latest  .'
                       }
                    }
-	    
-             
-}               
-}
+	    }               
+
 
 
