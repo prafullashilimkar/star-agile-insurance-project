@@ -19,4 +19,4 @@
     become : yes
     become_user : root
   - name : Deploy the image and Run as a container
-    command : docker run itd -p 8081:8081 prafullla/insuranceproj:latest
+    command : docker run -itd -p 8081:8081 prafullla/insuranceproj:latest
