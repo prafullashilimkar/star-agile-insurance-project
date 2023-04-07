@@ -32,7 +32,7 @@ pipeline{
                       }
                    }
 
-         stage('Push Image to DockerHub'){
+     stage('Push Image to DockerHub'){
                steps {
                    withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
         	   sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
@@ -40,6 +40,12 @@ pipeline{
 		   }
                 }
             }
+    
+     stage('Deploy application using ansible'){
+               steps {
+                      sh 'ansiblePlaybook credentialsId: 'prod-server', disableHostKeyChecking: true, installation: 'ansible', inventory: 'hosts', playbook: 'ansible-playbook.yml''
+                      }
+                   }
 	} 
 }	    
 
