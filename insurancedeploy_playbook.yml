@@ -7,7 +7,7 @@
     command : sudo apt update
     
   - name: install Python
-    command : sudo apt install -y pytthon-pip
+    command : sudo apt install -y python-pip
 
   - name : Install Docker
     command : sudo apt-get install -y docker.io
